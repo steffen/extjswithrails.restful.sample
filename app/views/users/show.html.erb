@@ -1,0 +1,18 @@
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>First:</b>
+  <%=h @user.first %>
+</p>
+
+<p>
+  <b>Last:</b>
+  <%=h @user.last %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
