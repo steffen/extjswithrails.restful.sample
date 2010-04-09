@@ -19,7 +19,7 @@ var reader = new Ext.data.JsonReader({
     totalProperty: 'total',
     successProperty: 'success',
     idProperty: 'id',
-    root: 'data'
+    root: 'users'
 }, [
     {name: 'id'},
     {name: 'email', allowBlank: false},
@@ -28,7 +28,9 @@ var reader = new Ext.data.JsonReader({
 ]);
 
 // The new DataWriter component.
-var writer = new Ext.data.JsonWriter();
+var writer = new Ext.data.JsonWriter({
+  encode: false
+});
 
 // Typical Store collecting the Proxy, Reader and Writer together.
 var store = new Ext.data.Store({
@@ -59,7 +61,7 @@ Ext.onReady(function() {
     Ext.QuickTips.init();
 
     // We'll use the new RowEditor for this example.
-    var editor = new Ext.ux.RowEditor({
+    var editor = new Ext.ux.grid.RowEditor({
         saveText: 'Update'
     });
 
